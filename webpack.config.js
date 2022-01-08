@@ -6,7 +6,7 @@ const Dotenv = require('dotenv-webpack');
 
 module.exports = {
     mode: 'development',
-    entry: './src/script.js',
+    entry: './src/script.ts',
     target: "web",
     output: {
         filename: 'bundle.js'
@@ -21,7 +21,7 @@ module.exports = {
         port: 3000,
     },
     resolve: {
-        extensions: [".js", ".json", ".jsx", ".css", ".scss", ".hbs"],
+        extensions: [".js", ".json", ".jsx", ".css", ".scss", ".html", '.tsx', '.ts'],
     },
     plugins: [
         new Dotenv(),
@@ -31,6 +31,11 @@ module.exports = {
     ],
     module: {
         rules: [
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
             {
                 test: /\.scss$/i,
                 use: [

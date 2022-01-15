@@ -1,7 +1,7 @@
 export {}
 
 declare global {
-    interface process {
-        env: Record<string, string>
+    class process {
+        static env: Record<string, string | undefined>
     }
 }

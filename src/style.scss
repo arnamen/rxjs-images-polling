@@ -1,10 +1,39 @@
-.square {
-    display: inline-block;
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: red;
+.start, .stop {
+    padding: 15px 30px;
+    border: none;
+    color: white;
+    transition: 0.5s all;
+}
+
+.start {
+    background-color: green;
+    &:hover {
+        color: black;
+        background-color: greenyellow;
+    }
+}
+
+.stop {
+    background-color: rgb(133, 0, 0);
+    &:hover {
+        color: black;
+        background-color: rgb(255, 0, 0);
+    }
+}
+
+.image-wrapper {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+    #image {
+        width: 500px;
+        height: 500px;
+    }
+}
+
+.buttons-wrapper {
+    display: flex;
+    justify-content: center;
 }
